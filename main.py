@@ -6,6 +6,10 @@ $MAKEFUN_OUTPUT_DIR/entry.txt. Python 3.13 stdlib only.
 
 Gate (from the kit): /output/entry.txt must be UTF-8 text of
 1 to 159 characters, not only white space.
+
+Flow: validate the fixed text against the gate first, then write it
+verbatim to entry.txt, then read it back and confirm the bytes match,
+so a bad run never leaves a half-written or wrong entry behind.
 """
 
 import os
